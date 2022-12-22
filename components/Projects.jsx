@@ -2,8 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import hms from '../public/assets/projects/hms.jpg'
-import dian from '../public/assets/projects/dian.JPG'
-import vega from '../public/assets/projects/vega.JPG'
+import dian from '../public/assets/projects/dian.jpg'
+import vega from '../public/assets/projects/vega.jpg'
 import seha from '../public/assets/projects/seha.jpg'
 import ProjectItem from './ProjectItem';
 
