@@ -1,19 +1,18 @@
-import React, { useState } from "react";
-import Head from "next/head";
-import Navbar from "../components/Navbar";
-import AccordionItemCareer from "../components/AccordionItemCareer";
-import { motion } from "framer-motion";
+import React from "react";
+import Head from "next/head"
+import Navbar from "../components/Navbar"
+import { useState } from "react";
+import AccordionItemCareer from "../components/AccordionItemCareer"
+import { motion } from "framer-motion"
 
-export default function career() {
-
+export default function Career() {
   const [open, setOpen] = useState(false);
 
-  const toggle = (index) => {
-    if (open === index) {
+  const toggle = (career) => {
+    if (open === career) {
       return setOpen(null);
     }
-
-    setOpen(index);
+    setOpen(career);
   };
 
   const accordionData = [
@@ -58,14 +57,14 @@ export default function career() {
             Careers at
             <span className="text-[#98999a]"> Gligx</span>
           </h3>
-          {accordionData.map((data, index) => {
+          {accordionData.map((data, career) => {
             return (
               <AccordionItemCareer
-                key={index}
-                open={index === open}
+                key={career}
+                open={career === open}
                 title={data.title}
                 desc={data.desc}
-                toggle={() => toggle(index)}
+                toggle={() => toggle(career)}
               />
             );
           })}

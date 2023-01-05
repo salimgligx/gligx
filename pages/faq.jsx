@@ -1,18 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import Head from "next/head";
 import Navbar from "../components/Navbar";
+import { useState } from "react";
 import AccordionItem from "../components/AccordionItem";
 import { motion } from "framer-motion";
 
-const faq = () => {
+const Faq = () => {
   const [open, setOpen] = useState(false);
 
-  const toggle = (index) => {
-    if (open === index) {
+  const toggle = (faq) => {
+    if (open === faq) {
       return setOpen(null);
     }
 
-    setOpen(index);
+    setOpen(faq);
   };
 
   const accordionData = [
@@ -57,14 +58,14 @@ const faq = () => {
             Frequently Asked
             <span className="text-[#98999a]"> Questions</span>
           </h3>
-          {accordionData.map((data, index) => {
+          {accordionData.map((data, faq) => {
             return (
               <AccordionItem
-                key={index}
-                open={index === open}
+                key={faq}
+                open={faq === open}
                 title={data.title}
                 desc={data.desc}
-                toggle={() => toggle(index)}
+                toggle={() => toggle(faq)}
               />
             );
           })}
@@ -74,4 +75,4 @@ const faq = () => {
   );
 };
 
-export default faq;
+export default Faq;
