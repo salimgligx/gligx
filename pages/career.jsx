@@ -1,12 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import Head from "next/head";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import Navbar from "../components/Navbar";
+import AccordionItemCareer from "../components/AccordionItemCareer";
+import { motion } from "framer-motion";
 
-const career = () => {
+export default function career() {
+
+  const [open, setOpen] = useState(false);
+
+  const toggle = (index) => {
+    if (open === index) {
+      return setOpen(null);
+    }
+
+    setOpen(index);
+  };
+
+  const accordionData = [
+    {
+      title: "Full Stack Web Developer",
+      desc: "We are looking for an experienced PHP developer who have good working experience with multiple projects. Candidate should have more than 5 years of experience in web development.",
+    },
+    {
+      title: "Marketing Executive",
+      desc: "Minimum 1-2 years of experience in Marketing * Familiarity with web design and publishing including Word press Job Description * In-depth study of products and through understanding including technical details and applications. * Work with sales team to develop strategies and implement brand strategies to ensure a consistent marketing message. * Develop, implement and manage digital marketing strategy .Create events and program collaterals and promote them * Manage and oversee social media content * Keep detailed records of all contacts. * Recording & effectively responding to all inward enquiries. * Maintain Documents and filling , Prepare quotations, Follow up on Invoices * Understanding of customers business and requirements. * Registering & introducing the company to potential buyers, multinational service providers * Identifying the upcoming tenders in the territory & preparations & submission of Tenders. * Introducing & advising on forth coming product developments to potential buyers/clients. * Regular follow up on projects enquiry and reporting to managers. Maintaining excellent relationship with end users, buyers, project coordinators and coworkers.",
+    },
+    {
+      title: "Social Media Marketing Executive",
+      desc: "Social Media Marketing Executive works closely with other members of the marketing team to develop and implement marketing campaigns. This position requires a high level of creativity and strategic thinking. The Social Media Marketing Executive must be able to work independently and be self-motivated. This position also requires excellent written and verbal English communication skills.",
+    },
+    {
+      title: "Telesales Executive",
+      desc: "Looking for EXPERIENCED candidates who are ambitious, hungry for success and ready for a challenging and rewarding career. Perfect for an individual who wants to learn, develop, and become a Stockbroker (telesales).",
+    },
+  ];
+
   return (
-    <>
-      <Navbar />
+    <div>
+        <Navbar />
       <Head>
         <title>Gligx | career</title>
         <meta
@@ -16,105 +47,31 @@ const career = () => {
         <link rel="icon" href="/fav.png" />
       </Head>
 
-      <div className="max-w-[940px] mx-auto p-2 pt-[120px]">
-        <h2 className="text-center">Career</h2>
-        <div className="bg-[#d0d4d6] my-4 p-4 w-full flex justify-between items-center">
-          <h2 className="text-center">Job details </h2>
-        </div>
-        <div className="text-center py-4 text-xl font-bold uppercase tracking-wider">
-          <div className="hidden sm:block">
-            <p>Full Stack Web Developer</p>
-          </div>
-        </div>
-        <p>
-          We are looking for an experienced PHP developer who have good working
-          experience with multiple projects. Candidate should have more than 5
-          years of experience in web development.{" "}
-        </p>
-
-        <div className="py-6">
-          <p className="italic">
-            <span className="font-bold italic">Responsibilities:</span>
-          </p>
-          <p className="py-1 italic">
-            Developing web application components/features using various
-            scripting languages with good design principles.
-          </p>
-          <ul className="list-disc list-outside px-7 py-1 leading-relaxed">
-            <li>Maintain developed code and aim for improvements</li>
-            <li>Improve existing implemented code</li>
-            <li>Monitor developed features for possible failure cases</li>
-            <li>Debug/troubleshoot for any errors</li>
-            <li>
-              System integration using APIs, Sockets, Binary protocols, AMQP,
-              MQTT etc
-            </li>
-            <li>
-              Develop performance-oriented SQL queries for web applications
-            </li>
-            <li>Write efficient JavaScript code</li>
-            <li>Write Unit Tests for all developed piece of code</li>
-            <li>Write migrations for database updates</li>
-            <li>Regularly sync code with repositories</li>
-            <li>
-              Understand clear requirement, develop quality features, and
-              deliver on time
-            </li>
-            <li>
-              Creating POC of any feature and explain limitations/overhead prior
-              finalising the solution
-            </li>
-            <li>
-              Demonstrate the feature functionality for customer acceptance
-            </li>
-            <li>Entertain assigned issues tickets in timely manner</li>
-          </ul>
-        </div>
-        <div className="py-6">
-          <p className="italic">
-            <span className="font-bold italic">Essential Skills:</span>
-          </p>
-          <p className="py-1 italic">
-            Working experience with PHP for over 5 years
-          </p>
-          <ul className="list-disc list-outside px-7 py-1 leading-relaxed">
-            <li>Working experience with Codeigniter 3 for over 4 years</li>
-            <li>Working experience with JavaScript/jQuery for over 5 years</li>
-            <li>Working experience with MySQL 5.6+ for over 5 years</li>
-          </ul>
-        </div>
-        <div className="py-6">
-          <p className="italic">
-            <span className="font-bold">Required Skills:</span>
-          </p>
-          <p className="py-1 italic">PHPUNIT 9</p>
-          <ul className="list-disc list-outside px-7 py-1 leading-relaxed">
-            <li>GIT/Bit Bucket</li>
-            <li>Redis with JSON</li>
-            <li>Apache Kafka</li>
-            <li>Web Sockets</li>
-            <li>Browser Service Workers and Local Storage implementation</li>
-            <li>AWS SDK</li>
-            <li>Ubuntu 18.04 and Shell Scripting</li>
-            <li>JIRA</li>
-          </ul>
-          <p>Job Types: Full-time, Permanent</p>
-          <div className="py-6">
-            <p className="italic">
-              <span className="font-bold italic">Experience:</span>
-            </p>
-            <ul className="list-disc list-outside px-7 py-1 leading-relaxed">
-              <li>MySQL 5.6+: 5 years (Preferred)</li>
-              <li>PHP 7.2+: 5 years (Preferred)</li>
-              <li>Codeigniter: 4 years (Preferred)</li>
-              <li>JavaScript: 5 years (Preferred)</li>
-            </ul>
-          </div>
-          <button className="w-full p-4 text-gray-100 mt-4">Apply now</button>
-        </div>
-      </div>
-    </>
-  );
-};
-
-export default career;
+      <section className="max-w-[1240px] minimum m-auto h-screen grid place-items-center">
+        <motion.div className="px-[40px] max-w-[800px"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, ease: "easeInOut" }}
+        >
+          <p className="pt-20 text-center text-blue-900">Career</p>
+          <h3 className="py-4 pb-10 text-gray-500 text-3xl font-bold  sm:text-center sm:text-5xl rotate-40 ">
+            Careers at
+            <span className="text-[#98999a]"> Gligx</span>
+          </h3>
+          {accordionData.map((data, index) => {
+            return (
+              <AccordionItemCareer
+                key={index}
+                open={index === open}
+                title={data.title}
+                desc={data.desc}
+                toggle={() => toggle(index)}
+              />
+            );
+          })}
+        </motion.div>
+      </section>
+      
+    </div>
+  )
+}

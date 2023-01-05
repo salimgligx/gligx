@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import React, { useState, useEffect } from "react";
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
@@ -28,7 +29,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div
+    <motion.div
       style={{ backgroundColor: `${navBg}` }}
       className={
         shadow
@@ -59,6 +60,9 @@ const Navbar = () => {
             </li>
             <li className="ml-10 text-sm uppercase hover:border-b">
               <Link href="/#projects">Projects</Link>
+            </li>
+            <li className="ml-10 text-sm uppercase hover:border-b">
+              <Link href="/faq">FAQ</Link>
             </li>
             <li className="ml-10 text-sm uppercase hover:border-b">
               <Link href="/career">Career</Link>
@@ -189,7 +193,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

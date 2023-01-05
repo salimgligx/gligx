@@ -47,7 +47,7 @@ const hms = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <button className="px-8 py-2 mt-4">View</button>
+            <button className="px-8 py-2 mt-4 bg-gray-900 text-white hover:bg-gray-700 rounded">View</button>
           </a>
         </div>
         <div className="col-span-4 md:col-span-1 shadow-xl shadow-gray-400 rounded-xl py-4">
