@@ -5,7 +5,7 @@ import { useState } from "react";
 import AccordionItem from "../components/AccordionItem";
 import { motion } from "framer-motion";
 
-const Faq = () => {
+const faq = () => {
   const [open, setOpen] = useState(false);
 
   const toggle = (faq) => {
@@ -37,7 +37,7 @@ const Faq = () => {
 
   return (
     <>
-      <Navbar />
+       <Navbar />
       <Head>
         <title>Gligx | Faq</title>
         <meta
@@ -75,4 +75,4 @@ const Faq = () => {
   );
 };
 
-export default Faq;
+export default faq;

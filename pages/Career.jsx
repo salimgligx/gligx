@@ -5,7 +5,7 @@ import { useState } from "react";
 import AccordionItemCareer from "../components/AccordionItemCareer"
 import { motion } from "framer-motion"
 
-export default function Career() {
+const career = () => {
   const [open, setOpen] = useState(false);
 
   const toggle = (career) => {
@@ -35,7 +35,7 @@ export default function Career() {
   ];
 
   return (
-    <div>
+    <>
         <Navbar />
       <Head>
         <title>Gligx | Career</title>
@@ -70,7 +70,8 @@ export default function Career() {
           })}
         </motion.div>
       </section>
-      
-    </div>
-  )
-}
+    </>
+  );
+};
+
+export default career;
