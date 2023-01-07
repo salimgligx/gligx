@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 import hms from "../public/assets/projects/hms.jpg";
 import dian from "../public/assets/projects/dian.jpg";
