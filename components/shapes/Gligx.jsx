@@ -1,6 +1,5 @@
 import { Suspense, useState } from "react";
 import { motion, MotionConfig, useMotionValue } from "framer-motion";
-import { Shapes } from "./Shapes";
 import { transition } from "./settings";
 import useMeasure from "react-use-measure";
 
@@ -55,16 +54,7 @@ export default function Gligx() {
         >
           <div className="pink blush" />
           <div className="blue blush" />
-          <div className="container">
-            <Suspense fallback={null}>
-              <Shapes
-                isHover={isHover}
-                isPress={isPress}
-                mouseX={mouseX}
-                mouseY={mouseY}
-              />
-            </Suspense>
-          </div>
+
         </motion.div>
         <motion.div
           variants={{ hover: { scale: 0.85 }, press: { scale: 1.1 } }}
